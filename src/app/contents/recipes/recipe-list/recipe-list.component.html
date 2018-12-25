@@ -1,16 +1,22 @@
 <div class="row">
-  <div class="col-xs-12"><button class="btn btn-success">Add new Recipe</button></div>
+  <div class="col-xs-12"><button class="btn btn-success" (click)="onAddRecipe()">Add new Recipe</button></div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-4"><input [(ngModel)]="newRecipe.name" /></div>
+  <div class="col-md-4"><input [(ngModel)]="newRecipe.description" /></div>
+  <div class="col-md-4"><input [(ngModel)]="newRecipe.imagePath" /></div>
 </div>
 <hr />
 
 <div class="row">
-  <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
+  <div class="col-md-12">
+    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes" (click)="onDisplayRecipeDetail(recipe)">
       <div class="pull-left">
-        <h4 class="list-group-heading">{{ recipe.name }}</h4>
+        <h3 class="list-group-heading">{{ recipe.name }}</h3>
         <p class="list-group-text">{{ recipe.description }}</p>
       </div>
-      <div class="pull-right"><img [src]="recipe.imagePath" alt="{{recipe.name}}" style="max-height: 50px" /></div>
+      <div class="pull-right"><img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 65px" /></div>
     </a>
   </div>
 </div>
