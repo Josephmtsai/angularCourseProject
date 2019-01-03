@@ -1,5 +1,5 @@
 <!-- The content below is only a placeholder and can be replaced. -->
 
 <router-outlet></router-outlet>
-<app-header></app-header>
-<contents-component></contents-component>
+<app-header (onChangeProduct)="changeSelectProduct($event)"></app-header>
+<contents-component [currentProduct]="selectProduct"></contents-component>

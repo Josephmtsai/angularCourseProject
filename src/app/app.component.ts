@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-project';
+  selectProduct = 'recipe';
+  changeSelectProduct(product) {
+    this.selectProduct = product;
+  }
 }
