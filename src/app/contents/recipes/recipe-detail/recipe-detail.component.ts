@@ -7,7 +7,7 @@ import Recipe from '../recipe-common/recipe.model';
   styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input('inputElement') element: Recipe;
+  @Input('inputElement') recipe: Recipe;
   constructor() {}
 
   ngOnInit() {}

@@ -11,12 +11,8 @@
 
 <div class="row">
   <div class="col-md-12">
-    <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes" (click)="onDisplayRecipeDetail(recipe)">
-      <div class="pull-left">
-        <h3 class="list-group-heading">{{ recipe.name }}</h3>
-        <p class="list-group-text">{{ recipe.description }}</p>
-      </div>
-      <div class="pull-right"><img [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 65px" /></div>
+    <a href="#" class="list-group-item clearfix" *ngFor="let recipeElement of recipes">
+      <app-recipe-item [recipe]="recipeElement" (changeSelectRecipe)="onDisplayRecipeDetail(recipeElement)"></app-recipe-item>
     </a>
   </div>
 </div>
