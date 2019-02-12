@@ -11,8 +11,21 @@ import { RecipeListComponent } from './contents/recipes/recipe-list/recipe-list.
 import { RecipeItemComponent } from './contents/recipes/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './contents/shopping/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './contents/shopping/shopping-edit/shopping-edit.component';
+import { EnHanceHighlightDirective } from './contents/directive/enhance-highlight.directive';
+
 @NgModule({
-  declarations: [AppComponent, contentsComponent, HeaderComponent, RecipeDetailComponent, RecipeCommonComponent, RecipeListComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent],
+  declarations: [
+    AppComponent,
+    contentsComponent,
+    HeaderComponent,
+    RecipeDetailComponent,
+    RecipeCommonComponent,
+    RecipeListComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    EnHanceHighlightDirective
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
