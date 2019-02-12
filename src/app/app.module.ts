@@ -12,6 +12,8 @@ import { RecipeItemComponent } from './contents/recipes/recipe-item/recipe-item.
 import { ShoppingListComponent } from './contents/shopping/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './contents/shopping/shopping-edit/shopping-edit.component';
 import { EnHanceHighlightDirective } from './contents/directive/enhance-highlight.directive';
+import { UnlessDirective } from './contents/directive/unless.directive';
+import { DropdownDirective } from './contents/directive/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { EnHanceHighlightDirective } from './contents/directive/enhance-highligh
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    EnHanceHighlightDirective
+    EnHanceHighlightDirective,
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

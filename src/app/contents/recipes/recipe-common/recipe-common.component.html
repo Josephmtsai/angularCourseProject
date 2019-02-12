@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-7"><app-recipe-list (addRecipe)="onRecipeAdded($event)" (changeDisplayRecipe)="onCurrentRecipeChanged($event)" [recipes]="recipes"></app-recipe-list></div>
   <div class="col-md-5">
-    <div class="col-md-12"><app-recipe-detail *ngIf="currentRecipe; else infoText" [inputElement]="currentRecipe"></app-recipe-detail></div>
+    <div class="col-md-12"><app-recipe-detail *appUnless="!currentRecipe" [inputElement]="currentRecipe"></app-recipe-detail></div>
+    <div class="col-md-12">
+      <div *appUnless="currentRecipe"><p>No detail</p></div>
+    </div>
   </div>
 </div>
-<ng-template #infoText> <p>No detail</p> </ng-template>
