@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import Recipe from '../recipe-common/recipe.model';
+import { RecipeService } from '../../service/recipe.service';
 @Component({
   selector: 'app-recipe-common',
   templateUrl: './recipe-common.component.html',
   styleUrls: ['./recipe-common.component.scss']
 })
 export class RecipeCommonComponent implements OnInit {
-  recipes: Recipe[] = [
-    new Recipe('Header', 'Description', 'http://www.sinaimg.cn/dy/slidenews/21_img/2014_47/17327_3856441_945009.jpg'),
-    new Recipe('salor moon', 'セーラーマーズ', 'http://blog-imgs-63.fc2.com/t/e/a/teamssw/hr140426i.jpg'),
-    new Recipe('salor moon', 'セーラーム', 'https://pbs.twimg.com/media/DV5Zg1mVMAAFRlN.jpg')
-  ];
+  recipes: Recipe[] = this.recipeService.recipes;
   currentRecipe: Recipe;
-  constructor() {}
-  onRecipeAdded(eventData: Recipe) {
-    this.recipes.push(eventData);
+  constructor(private recipeService: RecipeService) {
+    this.currentRecipe = this.recipeService.currentRecipe;
+    this.recipes = this.recipeService.recipes;
+    this.recipeService.currentRecipeUpdate.subscribe((recipe: Recipe) => (this.currentRecipe = recipe));
   }
-  onCurrentRecipeChanged(eventData: Recipe) {
-    this.currentRecipe = eventData;
+  onRecipeAdded(eventData: Recipe) {
+    this.recipeService.onRecipeAdded(eventData);
   }
   ngOnInit() {}
+  onCurrentRecipeChanged(eventData: Recipe) {
+    this.recipeService.onCurrentRecipeChanged(eventData);
+  }
 }

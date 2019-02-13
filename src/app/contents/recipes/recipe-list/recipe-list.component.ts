@@ -26,34 +26,34 @@ export class RecipeListComponent implements OnInit, OnChanges, DoCheck, AfterCon
   @Output() addRecipe = new EventEmitter<Recipe>();
   @Output() changeDisplayRecipe = new EventEmitter<Recipe>();
   constructor() {
-    console.log('constructor');
+    //console.log('constructor');
   }
 
   ngOnInit() {
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges');
-    console.log(changes);
+    //console.log('ngOnChanges');
+    //console.log(changes);
   }
   ngDoCheck() {
-    console.log('ngDoCheck');
+    //console.log('ngDoCheck');
   }
   ngAfterContentInit() {
-    console.log('ngAfterContentInit');
+    //console.log('ngAfterContentInit');
   }
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked');
+    //console.log('ngAfterContentChecked');
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
+    //console.log('ngAfterViewInit');
   }
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked');
+    //console.log('ngAfterViewChecked');
   }
   ngOnDestroy() {
-    console.log('ngOnDestroy');
+    //console.log('ngOnDestroy');
   }
   displayDetail(recipe) {
     this.newRecipe = recipe;

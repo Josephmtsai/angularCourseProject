@@ -14,7 +14,8 @@ import { ShoppingEditComponent } from './contents/shopping/shopping-edit/shoppin
 import { EnHanceHighlightDirective } from './contents/directive/enhance-highlight.directive';
 import { UnlessDirective } from './contents/directive/unless.directive';
 import { DropdownDirective } from './contents/directive/dropdown.directive';
-
+import { RecipeService } from './contents/service/recipe.service';
+import { LoggingService } from './contents/service/logging.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,7 @@ import { DropdownDirective } from './contents/directive/dropdown.directive';
     DropdownDirective
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [RecipeService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
