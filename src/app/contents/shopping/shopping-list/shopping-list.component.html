@@ -1,1 +1,12 @@
 <app-shopping-edit></app-shopping-edit>
+<hr />
+<div class="row">
+  <div class="col-md-3">
+    <a href="#" class="list-group-item clearfix" *ngFor="let shopData of shoppingList">
+      <div>
+        <h3 class="list-group-heading">{{ shopData.name }}</h3>
+        <p class="list-group-text">{{ shopData.price }}</p>
+      </div>
+    </a>
+  </div>
+</div>
