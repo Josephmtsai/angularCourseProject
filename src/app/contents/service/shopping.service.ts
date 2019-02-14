@@ -9,8 +9,13 @@ export class ShoppingService {
   getIngredients() {
     return this.ingredients.slice();
   }
-  addIngredients(ingredient: Ingredient) {
+  addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.updateIngredientEvent.emit();
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
     this.updateIngredientEvent.emit();
   }
 }

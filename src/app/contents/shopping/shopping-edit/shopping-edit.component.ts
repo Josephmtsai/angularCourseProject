@@ -12,6 +12,6 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('priceInput') priceInputRef: ElementRef;
   ngOnInit() {}
   addToShoppingList() {
-    this.shoppingService.addIngredients(new Ingredient(this.nameInputRef.nativeElement.value, this.priceInputRef.nativeElement.value));
+    this.shoppingService.addIngredient(new Ingredient(this.nameInputRef.nativeElement.value, this.priceInputRef.nativeElement.value));
   }
 }
