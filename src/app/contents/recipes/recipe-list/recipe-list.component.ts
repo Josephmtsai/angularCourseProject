@@ -21,7 +21,7 @@ import Recipe from '../recipe-common/recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
-  newRecipe: Recipe = new Recipe('', '', '');
+  newRecipe: Recipe = new Recipe('', '', '', []);
   @Input('recipes') recipes: Recipe[];
   @Output() addRecipe = new EventEmitter<Recipe>();
   @Output() changeDisplayRecipe = new EventEmitter<Recipe>();
@@ -59,8 +59,8 @@ export class RecipeListComponent implements OnInit, OnChanges, DoCheck, AfterCon
     this.newRecipe = recipe;
   }
   onAddRecipe() {
-    this.addRecipe.emit(this.newRecipe);
-    this.newRecipe = new Recipe('a', 'a', 'a');
+    //this.addRecipe.emit(this.newRecipe);
+    //this.newRecipe = new Recipe('a', 'a', 'a');
   }
   onDisplayRecipeDetail(recipe) {
     this.changeDisplayRecipe.emit(recipe);
