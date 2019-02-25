@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { contentsComponent } from './contents/contents.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +17,8 @@ import { UnlessDirective } from './contents/directive/unless.directive';
 import { DropdownDirective } from './contents/directive/dropdown.directive';
 import { RecipeService } from './contents/service/recipe.service';
 import { LoggingService } from './contents/service/logging.service';
+
+const routingModule: Routes = [{ path: '', component: RecipeCommonComponent }, { path: 'shop', component: ShoppingListComponent }];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,7 @@ import { LoggingService } from './contents/service/logging.service';
     UnlessDirective,
     DropdownDirective
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, RouterModule.forRoot(routingModule), FormsModule],
   providers: [RecipeService, LoggingService],
   bootstrap: [AppComponent]
 })

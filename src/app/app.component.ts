@@ -9,8 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //constructor(private loggingService: LoggingService) {}
   title = 'course-project';
-  selectProduct = 'recipe';
-  changeSelectProduct(product) {
-    this.selectProduct = product;
-  }
 }
