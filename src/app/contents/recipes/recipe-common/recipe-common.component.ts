@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Recipe from '../recipe-common/recipe.model';
 import { RecipeService } from '../../service/recipe.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-recipe-common',
   templateUrl: './recipe-common.component.html',
@@ -9,7 +10,7 @@ import { RecipeService } from '../../service/recipe.service';
 export class RecipeCommonComponent implements OnInit {
   recipes: Recipe[] = this.recipeService.recipes;
   currentRecipe: Recipe;
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private route: ActivatedRoute) {}
 
   onRecipeAdded(eventData: Recipe) {
     this.recipeService.onRecipeAdded(eventData);
@@ -18,6 +19,7 @@ export class RecipeCommonComponent implements OnInit {
     this.currentRecipe = this.recipeService.currentRecipe;
     this.recipes = this.recipeService.recipes;
     this.recipeService.currentRecipeUpdate.subscribe((recipe: Recipe) => (this.currentRecipe = recipe));
+    console.log(this.route.snapshot.params['id']);
   }
   onCurrentRecipeChanged(eventData: Recipe) {
     this.recipeService.onCurrentRecipeChanged(eventData);

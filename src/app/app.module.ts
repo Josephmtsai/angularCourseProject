@@ -18,7 +18,11 @@ import { DropdownDirective } from './contents/directive/dropdown.directive';
 import { RecipeService } from './contents/service/recipe.service';
 import { LoggingService } from './contents/service/logging.service';
 
-const routingModule: Routes = [{ path: '', component: RecipeCommonComponent }, { path: 'shop', component: ShoppingListComponent }];
+const routingModule: Routes = [
+  { path: '', component: RecipeCommonComponent },
+  { path: ':id', component: RecipeCommonComponent },
+  { path: 'shop', component: ShoppingListComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
