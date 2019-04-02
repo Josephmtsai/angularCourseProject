@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 //import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { contentsComponent } from './contents/contents.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipeDetailComponent } from './contents/recipes/recipe-detail/recipe-detail.component';
 import { RecipeCommonComponent } from './contents/recipes/recipe-common/recipe-common.component';
@@ -19,14 +18,15 @@ import { RecipeService } from './contents/service/recipe.service';
 import { LoggingService } from './contents/service/logging.service';
 
 const routingModule: Routes = [
-  { path: '', component: RecipeCommonComponent },
-  { path: ':id', component: RecipeCommonComponent },
+  { path: '', redirectTo: '/recipe', pathMatch: 'full' }
+  { path: 'recipe', component: RecipeCommonComponent },
+  { path: 'recipe/:id', component: RecipeCommonComponent },
   { path: 'shop', component: ShoppingListComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    contentsComponent,
+
     HeaderComponent,
     RecipeDetailComponent,
     RecipeCommonComponent,
